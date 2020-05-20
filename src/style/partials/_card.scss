@@ -1,0 +1,31 @@
+/****************************************************
+* Card
+****************************************************/
+.card{
+  width: 240px;
+  @include u--flex(column);
+  margin: 20px 20px 20px 0;
+  background-color: rgba($grey, 0.3);
+  color: $white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba($black, 0.8);
+  &__logo{
+    width: 200px;
+    margin: 20px;
+    border-radius: 8px 8px 0 0 ;
+  }
+  &__title{
+    margin-bottom: 5px;
+  }
+  &__author{
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 300;
+    opacity: 0.6;
+  }
+  &__year{
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    opacity: 0.3;
+  }
+}

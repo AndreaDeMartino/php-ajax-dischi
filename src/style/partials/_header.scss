@@ -1,3 +1,20 @@
 /****************************************************
 * HEADER
 ****************************************************/
+
+.header{
+  height: 10%;
+  width: 100%;
+  background: $black;
+  &__wrapper{
+    height: 100%;
+    @include u--wrapper(60%);
+  }
+  &__nav{
+    height: 100%;
+    @include u--flex(row,flex-start,center);
+    .header__logo{
+      height: 70%;
+    }
+  }
+}
