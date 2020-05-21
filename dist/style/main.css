@@ -108,6 +108,8 @@ a {
   color: #fff;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  transition: opacity 0.3s linear, width 0.3s linear;
 }
 
 .main__wrapper .card__logo {
@@ -131,6 +133,12 @@ a {
   font-size: 0.8rem;
   margin-bottom: 10px;
   opacity: 0.3;
+}
+
+.main__wrapper .card:hover {
+  opacity: 1;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  width: 260px;
 }
 
 /****************************************************

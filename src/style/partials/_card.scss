@@ -9,6 +9,9 @@
   color: $white;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba($black, 0.8);
+  opacity: 0.8;
+  transition: opacity 0.3s linear,
+              width 0.3s linear;
   &__logo{
     width: 200px;
     margin: 20px;
@@ -27,5 +30,10 @@
     font-size: 0.8rem;
     margin-bottom: 10px;
     opacity: 0.3;
+  }
+  &:hover{
+    opacity: 1;
+    box-shadow: 0 0 5px rgba($white, 0.8);
+    width: 260px;
   }
 }
