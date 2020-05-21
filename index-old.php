@@ -41,7 +41,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <a href="http://localhost:8888/php-ajax-dischi/index.php">NEW PROJECT</a>
+      <a href="http://localhost:8888/php-ajax-dischi/index.php">GO TO MILESTONE #2</a>
     </footer>
 
   </div>

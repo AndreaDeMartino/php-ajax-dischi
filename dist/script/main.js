@@ -10986,13 +10986,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // Reference
   var container = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__wrapper');
   var inputbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__inputbox');
-  var logo = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__logo');
+  var logo = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__logo'); // Api Reference
+
+  var database = 'http://localhost:8888/php-ajax-dischi/dist/partials/data-json.php'; // Handlebars config
+
   var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#card-template').html();
-  var template = Handlebars.compile(source);
-  var database = 'http://localhost:8888/php-ajax-dischi/dist/partials/data-json.php'; // Default actions on page loading
+  var template = Handlebars.compile(source); // Default actions on main-page
 
   inputbox.focus();
-  getData(); // Reset albums when Click on logo
+  getData(); // Reset albums view when Click on logo
 
   logo.click(function () {
     container.html('');

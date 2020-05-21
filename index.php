@@ -10,6 +10,7 @@
 <body>
 
   <div id="app">
+    
     <!-- Header -->
     <header class="header">
       <div class="header__wrapper">
@@ -29,7 +30,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <a href="http://localhost:8888/php-ajax-dischi/index-old.php">OLD PROJECT</a>
+      <a href="http://localhost:8888/php-ajax-dischi/index-old.php">GO TO MILESTONE #1</a>
     </footer>
 
   </div>

@@ -5,15 +5,17 @@ $(document).ready(function () {
   var container = $('.main__wrapper');
   var inputbox = $('.header__inputbox');
   var logo = $('.header__logo');
+  // Api Reference
+  var database = 'http://localhost:8888/php-ajax-dischi/dist/partials/data-json.php';
+  // Handlebars config
   var source = $('#card-template').html();
   var template = Handlebars.compile(source);
-  var database = 'http://localhost:8888/php-ajax-dischi/dist/partials/data-json.php';
 
-  // Default actions on page loading
+  // Default actions on main-page
   inputbox.focus();
   getData();
   
-  // Reset albums when Click on logo
+  // Reset albums view when Click on logo
   logo.click( () => {
     container.html('');
     getData();
