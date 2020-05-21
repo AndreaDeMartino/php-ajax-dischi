@@ -12,9 +12,21 @@
   }
   &__nav{
     height: 100%;
-    @include u--flex(row,flex-start,center);
+    @include u--flex(row,space-between,center);
     .header__logo{
       height: 70%;
+    }
+    .header__inputbox{
+      outline: none;
+      opacity: 0.8;
+      transition: opacity 0.3s linear;
+      border-radius: 3px;
+      padding: 3px;
+      font-size: 16px;
+      color: $blue;
+      &:hover{
+        opacity: 1;
+      }
     }
   }
 }

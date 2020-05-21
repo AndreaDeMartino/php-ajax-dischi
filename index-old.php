@@ -1,3 +1,7 @@
+<?php //Import Data Source
+  include __DIR__ . '/dist/partials/data.php' 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,6 @@
       <div class="header__wrapper">
         <nav class="header__nav">
           <img class="header__logo" src="dist/img/spotify-logo.png" alt="Header Logo">
-          <input class="header__inputbox" type="text" placeholder="Ricerca un Album">
         </nav>
       </div>
     </header>
@@ -23,31 +26,25 @@
     <!-- Main -->
     <main class="main">
       <div class="main__wrapper">
-       
+
+        <?php foreach($albums as $album){?>
+        <div class="card">
+          <img class="card__logo" src="<?php echo $album['logo'] ?>" alt="card logo">
+          <h3 class="card__title"><?php echo $album['title'] ?></h3>
+          <h4 class="card__author"><?php echo $album['author'] ?></h4>
+          <h5 class="card__year"><?php echo $album['year'] ?></h5>
+        </div>
+        <?php }?>
+
       </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <a href="http://localhost:8888/php-ajax-dischi/index-old.php">OLD PROJECT</a>
+      <a href="http://localhost:8888/php-ajax-dischi/index.php">NEW PROJECT</a>
     </footer>
 
   </div>
 
-
-  <!-- Template Handlebars -->
-  <script id="card-template" type="text/x-handlebars-template">
-    <div class="card">
-      <img class="card__logo" src="{{ logo }}" alt="card logo">
-      <h3 class="card__title">{{ title }}</h3>
-      <h4 class="card__author">{{ author }}</h4>
-      <h5 class="card__year"> {{ year }}</h5>
-    </div>
-  </script>
-
- <!-- HANDLEBARS -->
- <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
-  <!-- My Script -->
-  <script src="dist/script/main.js"></script>
 </body>
 </html>

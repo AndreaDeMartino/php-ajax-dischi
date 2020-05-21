@@ -10983,8 +10983,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  console.log('JS READY');
-});
+  // Reference
+  var container = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__wrapper');
+  var inputbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__inputbox');
+  var logo = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__logo');
+  var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#card-template').html();
+  var template = Handlebars.compile(source);
+  var database = 'http://localhost:8888/php-ajax-dischi/dist/partials/data-json.php'; // Default actions on page loading
+
+  inputbox.focus();
+  getData(); // Reset albums when Click on logo
+
+  logo.click(function () {
+    container.html('');
+    getData();
+  }); // Search Albums by author with keyup on inputbox
+
+  inputbox.keyup(function (e) {
+    if (e.which == 13) {
+      search();
+    }
+  });
+  /****************************************************
+  * FUNCTIONS
+  ****************************************************/
+  // FUNCTION: Get data by API
+
+  function getData() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+      url: database,
+      method: 'GET',
+      success: function success(data) {
+        for (var i = 0; i < data.length; i++) {
+          var card = {
+            title: data[i].title,
+            author: data[i].author,
+            year: data[i].year,
+            logo: data[i].logo
+          };
+          var html = template(card);
+          container.append(html);
+        }
+      },
+      error: function error() {
+        console.log('Errore Api');
+      }
+    });
+  } // FUNCTION: Search data by API
+
+
+  function search() {
+    var searchText = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__inputbox').val().trim().toLowerCase();
+    container.html('');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+      url: database,
+      method: 'GET',
+      success: function success(data) {
+        var cont = false;
+
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].author.toLowerCase() == searchText) {
+            cont = true;
+            var card = {
+              title: data[i].title,
+              author: data[i].author,
+              year: data[i].year,
+              logo: data[i].logo
+            };
+            var html = template(card);
+            container.append(html);
+          }
+        }
+
+        if (!cont) {
+          alert('Nessun risultato prodotto dalla ricerca');
+        }
+
+        ; // Reset inputbox
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__inputbox').val('');
+      },
+      error: function error() {
+        console.log('api error');
+      }
+    });
+  }
+}); //End Doc Ready
 
 /***/ }),
 
